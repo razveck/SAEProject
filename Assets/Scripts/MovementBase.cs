@@ -7,6 +7,8 @@ namespace SAE.Assets.Scripts {
 
 		protected Vector2 _direction;
 
+		
+
 		[SerializeField]
 		private float _speed;
 
