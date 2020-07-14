@@ -12,8 +12,16 @@ namespace SAE.Assets.Scripts {
 		[SerializeField]
 		protected GameObject _weapon;
 
+		[SerializeField]
+		protected GameObject _projectilePrefab;
+
 		private void Update() {
 			Aim();
+			if(Input.GetMouseButtonDown(0)){
+				//instantiate a projectile
+				Instantiate(_projectilePrefab, _weapon.transform.position, _weapon.transform.rotation);
+				//move the projectile
+			}
 		}
 
 		protected abstract void Aim();

@@ -39,8 +39,11 @@ namespace SAE.Assets.Scripts {
 			//this is a Unity method that does that
 			//_direction.Normalize();
 
+			//solution 1: convert world direction to local direction
+			//transform.InverseTransformDirection(_direction)
 
-			transform.Translate(_direction * _speed * Time.deltaTime);
+			//solution 2: Translate relative to world space
+			transform.Translate(_direction * _speed * Time.deltaTime, Space.World);
 		}
 
 		protected abstract void CalculateDirection();
