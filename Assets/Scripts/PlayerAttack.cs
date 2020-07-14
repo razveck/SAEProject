@@ -26,5 +26,11 @@ namespace SAE.Assets.Scripts {
 			_weapon.transform.localPosition = new Vector3(Mathf.Cos(Angle), Mathf.Sin(Angle)) * _weaponDistance;
 
 		}
+
+		protected override void Attack() {
+			if(Input.GetMouseButtonDown(0)){
+				Instantiate(_projectilePrefab, _weapon.transform.position, _weapon.transform.rotation);
+			}
+		}
 	}
 }

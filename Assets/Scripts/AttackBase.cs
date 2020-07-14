@@ -17,13 +17,11 @@ namespace SAE.Assets.Scripts {
 
 		private void Update() {
 			Aim();
-			if(Input.GetMouseButtonDown(0)){
-				//instantiate a projectile
-				Instantiate(_projectilePrefab, _weapon.transform.position, _weapon.transform.rotation);
-				//move the projectile
-			}
+			Attack();
+			
 		}
 
 		protected abstract void Aim();
+		protected abstract void Attack();
 	}
 }
