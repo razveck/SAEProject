@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SAE.Assets.Scripts {
 	public abstract class HealthBase : MonoBehaviour {
@@ -14,6 +15,8 @@ namespace SAE.Assets.Scripts {
 		protected int _currentHealth;
 
 		public Team Team;
+
+		public event Action<float> HealthChanged;
 
 		private void OnEnable() {
 
@@ -31,8 +34,10 @@ namespace SAE.Assets.Scripts {
 
 		}
 
-		public void DealDamage(int damage){
+		public void DealDamage(int damage) {
 			_currentHealth -= damage;
+
+			HealthChanged?.Invoke((float)_currentHealth / _maxHealth);
 
 			if(_currentHealth <= 0)
 				Die();
