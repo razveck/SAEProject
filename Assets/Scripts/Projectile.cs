@@ -8,8 +8,14 @@ using UnityEngine;
 namespace SAE.Assets.Scripts {
 	public class Projectile : MonoBehaviour {
 
+		public Team Team;
+
 		private void OnTriggerEnter2D(Collider2D collision) {
+
 			if(collision.TryGetComponent(out HealthBase health)){
+				if(health.Team == Team)
+					return;
+
 				health.DealDamage(10);
 
 				Destroy(gameObject);

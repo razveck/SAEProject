@@ -13,6 +13,7 @@ namespace SAE.Assets.Scripts {
 		[SerializeField]
 		protected int _currentHealth;
 
+		public Team Team;
 
 		private void OnEnable() {
 

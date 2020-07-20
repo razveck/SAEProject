@@ -15,6 +15,9 @@ namespace SAE.Assets.Scripts {
 		[SerializeField]
 		protected GameObject _projectilePrefab;
 
+		[SerializeField]
+		protected Team _team;
+
 		private void Update() {
 			Aim();
 			Attack();
