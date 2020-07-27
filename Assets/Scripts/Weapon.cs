@@ -10,13 +10,18 @@ namespace SAE.Assets.Scripts {
 
 		private float _timer;
 		[SerializeField]
+		private Team _team;
+		[SerializeField]
 		private float _attackCooldown = 1;
 		[SerializeField]
 		protected GameObject _projectilePrefab;
 		[SerializeField]
 		private Transform _shootPoint;
+
 		[SerializeField]
-		private Team _team;
+		private int _projectileAmount = 1;
+		[SerializeField]
+		private float _deviationAngle = 0;
 
 		private void Update() {
 			if(_timer > 0)
@@ -25,11 +30,17 @@ namespace SAE.Assets.Scripts {
 
 		public void Attack() {
 			if(_timer <= 0) {
-				Projectile proj = Instantiate(_projectilePrefab, _shootPoint.position, transform.rotation).GetComponent<Projectile>();
-				proj.Team = _team;
-				_timer = _attackCooldown;
+
+				for(int i = 0; i < _projectileAmount; i++) {
+					Vector3 euler = transform.rotation.eulerAngles;
+					float angle = _deviationAngle / 2;
+					euler.z += UnityEngine.Random.Range(-angle, angle);
+
+					Projectile proj = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.Euler(euler)).GetComponent<Projectile>();
+					proj.Team = _team;
+					_timer = _attackCooldown;
+				}
 			}
 		}
-
 	}
 }

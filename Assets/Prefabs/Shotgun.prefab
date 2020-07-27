@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2302405653479602838}
   - component: {fileID: 1565859873892030013}
   m_Layer: 0
-  m_Name: Pistol
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c113918f77caa428fee370575047ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackCooldown: 0.5
+  _team: 0
+  _attackCooldown: 2
   _projectilePrefab: {fileID: 2373044826434200651, guid: 5386233f16235384289d8d70ff2eba34,
     type: 3}
   _shootPoint: {fileID: 64394588195609995}
-  _team: 1
+  _projectileAmount: 5
+  _deviationAngle: 45
 --- !u!1 &4484677459571635312
 GameObject:
   m_ObjectHideFlags: 0
