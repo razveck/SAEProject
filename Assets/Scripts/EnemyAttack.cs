@@ -8,16 +8,9 @@ using UnityEngine;
 namespace SAE.Assets.Scripts {
 	public class EnemyAttack : AttackBase {
 
-		private float _timer;
-
 		[SerializeField]
 		private Transform _player;
 
-		[SerializeField]
-		private Transform _shootPoint;
-
-		[SerializeField]
-		private float _attackCooldown = 1;
 
 		protected override void Aim() {
 			Vector3 direction = _player.position - transform.position;
@@ -27,13 +20,7 @@ namespace SAE.Assets.Scripts {
 		}
 
 		protected override void Attack() {
-			_timer -= Time.deltaTime;
-
-			if(_timer <= 0) {
-				Projectile proj = Instantiate(_projectilePrefab, _shootPoint.position, _weapon.transform.rotation).GetComponent<Projectile>();
-				proj.Team = _team;
-				_timer = _attackCooldown;
-			}
+			_weapon.Attack();
 		}
 	}
 }

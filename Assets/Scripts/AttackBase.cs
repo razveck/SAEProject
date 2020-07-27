@@ -10,10 +10,7 @@ namespace SAE.Assets.Scripts {
 	public abstract class AttackBase : MonoBehaviour {
 
 		[SerializeField]
-		protected GameObject _weapon;
-
-		[SerializeField]
-		protected GameObject _projectilePrefab;
+		protected Weapon _weapon;
 
 		[SerializeField]
 		protected Team _team;
@@ -21,7 +18,6 @@ namespace SAE.Assets.Scripts {
 		private void Update() {
 			Aim();
 			Attack();
-			
 		}
 
 		protected abstract void Aim();

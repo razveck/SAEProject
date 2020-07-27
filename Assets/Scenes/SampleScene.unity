@@ -747,6 +747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 654733396595141983, guid: cb0fbf7a625dc9e4cbad1acf0600e947,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb0fbf7a625dc9e4cbad1acf0600e947, type: 3}
 --- !u!1001 &1325354470224794490
@@ -756,25 +761,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6541880823812503362, guid: d6d53b061f4534e4f9a1921c1daa2653,
-        type: 3}
-      propertyPath: _maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -6541880823812503362, guid: d6d53b061f4534e4f9a1921c1daa2653,
-        type: 3}
-      propertyPath: _currentHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 1325354468632799184, guid: d6d53b061f4534e4f9a1921c1daa2653,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1325354468632799184, guid: d6d53b061f4534e4f9a1921c1daa2653,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1325354468632799191, guid: d6d53b061f4534e4f9a1921c1daa2653,
         type: 3}
