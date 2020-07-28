@@ -15,7 +15,7 @@ namespace SAE.Assets.Scripts {
 		[SerializeField]
 		protected Team _team;
 
-		private void Update() {
+		protected virtual void Update() {
 			Aim();
 			Attack();
 		}

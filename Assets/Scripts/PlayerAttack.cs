@@ -3,10 +3,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace SAE.Assets.Scripts {
 	public class PlayerAttack : AttackBase {
+
+		[SerializeField]
+		private List<Weapon> _weaponsList;
 
 		protected override void Aim() {
 			Vector3 pixelPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -22,6 +26,37 @@ namespace SAE.Assets.Scripts {
 		protected override void Attack() {
 			if(Input.GetMouseButton(0)){
 				_weapon.Attack();
+			}
+		}
+
+		protected override void Update() {
+			base.Update();
+			if(Input.GetKeyDown(KeyCode.Alpha1)){
+				ChangeWeapon((WeaponType)0);
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha2)){
+				ChangeWeapon((WeaponType)1);
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha3)){
+				ChangeWeapon((WeaponType)2);
+			}
+		}
+
+		public void ChangeWeapon(WeaponType newWeapon){
+			//look through the weaponList
+			for(int i = 0; i < _weaponsList.Count; i++) {
+				if(_weaponsList[i].Type == newWeapon){
+					//disable the old weapon
+					_weapon.gameObject.SetActive(false);
+
+					//change the current weapon
+					_weapon = _weaponsList[i];
+
+					//enable the current weapon
+					_weapon.gameObject.SetActive(true);
+
+					//play animations/sounds
+				}
 			}
 		}
 	}

@@ -9,6 +9,7 @@ namespace SAE.Assets.Scripts {
 	public class Weapon : MonoBehaviour {
 
 		private float _timer;
+
 		[SerializeField]
 		private Team _team;
 		[SerializeField]
@@ -22,6 +23,8 @@ namespace SAE.Assets.Scripts {
 		private int _projectileAmount = 1;
 		[SerializeField]
 		private float _deviationAngle = 0;
+
+		public WeaponType Type;
 
 		private void Update() {
 			if(_timer > 0)

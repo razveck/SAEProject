@@ -38,6 +38,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4485158198538767020, guid: 86d0945a91907064eb05f5b680e2cced,
         type: 3}
+    - target: {fileID: 1565859873892030013, guid: 93c18bffb6f663f449ae55327d5b861e,
+        type: 3}
+      propertyPath: Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565859873892030013, guid: 93c18bffb6f663f449ae55327d5b861e,
+        type: 3}
+      propertyPath: _attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1993690853918549286, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_LocalPosition.x
