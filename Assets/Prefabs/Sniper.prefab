@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7487415261342442912
+--- !u!1001 &5591704754785563594
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,57 +10,53 @@ PrefabInstance:
     - target: {fileID: 64394588195609995, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.189
+      value: 1.656
       objectReference: {fileID: 0}
     - target: {fileID: 1183273571427824400, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_Name
-      value: Shotgun
+      value: Sniper
       objectReference: {fileID: 0}
     - target: {fileID: 1331938070193637634, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.6603774
       objectReference: {fileID: 0}
     - target: {fileID: 1331938070193637634, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.8711591
+      value: 0.6603774
       objectReference: {fileID: 0}
     - target: {fileID: 1331938070193637634, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.6603774
       objectReference: {fileID: 0}
     - target: {fileID: 1565859873892030013, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
-      propertyPath: _attackCooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1565859873892030013, guid: 93c18bffb6f663f449ae55327d5b861e,
+      propertyPath: _projectilePrefab
+      value: 
+      objectReference: {fileID: 4485158198538767020, guid: 86d0945a91907064eb05f5b680e2cced,
         type: 3}
-      propertyPath: _projectileAmount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1565859873892030013, guid: 93c18bffb6f663f449ae55327d5b861e,
-        type: 3}
-      propertyPath: _deviationAngle
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1565859873892030013, guid: 93c18bffb6f663f449ae55327d5b861e,
-        type: 3}
-      propertyPath: _team
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1993690853918549286, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8382
+      value: 1.0478
       objectReference: {fileID: 0}
     - target: {fileID: 1993690853918549286, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5516125
+      value: 0.97094405
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993690853918549286, guid: 93c18bffb6f663f449ae55327d5b861e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993690853918549286, guid: 93c18bffb6f663f449ae55327d5b861e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.332897
       objectReference: {fileID: 0}
     - target: {fileID: 2302405653479602838, guid: 93c18bffb6f663f449ae55327d5b861e,
         type: 3}

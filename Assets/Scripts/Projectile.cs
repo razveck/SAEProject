@@ -8,6 +8,9 @@ using UnityEngine;
 namespace SAE.Assets.Scripts {
 	public class Projectile : MonoBehaviour {
 
+		[SerializeField]
+		private int _damage = 1;
+
 		public Team Team;
 
 		private void OnTriggerEnter2D(Collider2D collision) {
@@ -16,7 +19,7 @@ namespace SAE.Assets.Scripts {
 				if(health.Team == Team)
 					return;
 
-				health.DealDamage(10);
+				health.DealDamage(_damage);
 
 				Destroy(gameObject);
 			}

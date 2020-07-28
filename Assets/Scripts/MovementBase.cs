@@ -10,7 +10,7 @@ namespace SAE.Assets.Scripts {
 		
 
 		[SerializeField]
-		private float _speed;
+		protected float _speed;
 
 		// Start is called before the first frame update
 		void Start() {

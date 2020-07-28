@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2373044826434200651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.94, y: -0.012, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.37564182, y: 0.19517472, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
+  _range: 10
 --- !u!114 &4812593685845138411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43197e29f754aba44a5862e75ea351d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 5
+  Team: 0
 --- !u!70 &4070802005851134166
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
