@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SAE.Assets.Scripts {
 	public class Weapon : MonoBehaviour {
@@ -24,6 +25,11 @@ namespace SAE.Assets.Scripts {
 		[SerializeField]
 		private float _deviationAngle = 0;
 
+		[SerializeField]
+		private AudioSource _audioSource;
+		[SerializeField]
+		private AudioClip[] _shootClips;
+
 		public WeaponType Type;
 
 		private void Update() {
@@ -37,12 +43,15 @@ namespace SAE.Assets.Scripts {
 				for(int i = 0; i < _projectileAmount; i++) {
 					Vector3 euler = transform.rotation.eulerAngles;
 					float angle = _deviationAngle / 2;
-					euler.z += UnityEngine.Random.Range(-angle, angle);
+					euler.z += Random.Range(-angle, angle);
 
 					Projectile proj = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.Euler(euler)).GetComponent<Projectile>();
 					proj.Team = _team;
 					_timer = _attackCooldown;
 				}
+
+				_audioSource.clip = _shootClips[Random.Range(0, _shootClips.Length)];
+				_audioSource.Play();
 			}
 		}
 	}

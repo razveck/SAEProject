@@ -13,6 +13,10 @@ namespace SAE.Assets.Scripts {
 		protected int _maxHealth;
 		[SerializeField]
 		protected int _currentHealth;
+		[SerializeField]
+		private AudioSource _audioSource;
+		[SerializeField]
+		private AudioClip _damageClip;
 
 		public Team Team;
 
@@ -38,6 +42,11 @@ namespace SAE.Assets.Scripts {
 			_currentHealth -= damage;
 
 			HealthChanged?.Invoke((float)_currentHealth / _maxHealth);
+
+			//optional. Since we always the same clip, we don't need to assign it every time
+			//_audioSource.clip = _damageClip;
+
+			_audioSource.Play();
 
 			if(_currentHealth <= 0)
 				Die();
