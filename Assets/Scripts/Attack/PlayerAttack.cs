@@ -20,7 +20,8 @@ namespace SAE.Assets.Scripts {
 
 			//convert from radians to degrees
 			float angle = Mathf.Atan2(direction.y, direction.x);
-			_weapon.transform.rotation = Quaternion.Euler(0, 0, angle * 57.2958f);
+			_weapon.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+			
 		}
 
 		protected override void Attack() {
@@ -58,6 +59,10 @@ namespace SAE.Assets.Scripts {
 					//play animations/sounds
 				}
 			}
+		}
+
+		public void Reload(){
+			_weapon.Reload();
 		}
 	}
 }

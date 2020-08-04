@@ -15,11 +15,12 @@ namespace SAE.Assets.Scripts {
 		protected override void Aim() {
 			Vector3 direction = _player.position - transform.position;
 
-			float angle = Mathf.Atan2(direction.y, direction.x);
-			_weapon.transform.rotation = Quaternion.Euler(0, 0, angle * 57.2958f);
+			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+			_weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
 		}
 
 		protected override void Attack() {
+			_weapon.Reload();
 			_weapon.Attack();
 		}
 	}

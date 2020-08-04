@@ -7,7 +7,13 @@ using UnityEngine;
 
 namespace SAE.Assets.Scripts {
 	public class EnemyHealth : HealthBase {
+
+		[SerializeField]
+		private GameObject _lootPrefab;
+
 		protected override void Die() {
+			Instantiate(_lootPrefab, transform.position, Quaternion.identity);
+
 			Destroy(gameObject);
 		}
 	}

@@ -26,19 +26,38 @@ namespace SAE.Assets.Scripts {
 		private float _deviationAngle = 0;
 
 		[SerializeField]
+		private int _maximumAmmo;
+		[SerializeField]
+		private int _currentAmmo;
+
+		[SerializeField]
 		private AudioSource _audioSource;
 		[SerializeField]
 		private AudioClip[] _shootClips;
 
 		public WeaponType Type;
 
+		private void Start() {
+			_currentAmmo = _maximumAmmo;
+		}
+
 		private void Update() {
 			if(_timer > 0)
 				_timer -= Time.deltaTime;
-		}
 
+			Vector3 scale = transform.localScale;
+			float angle = transform.rotation.eulerAngles.z;
+
+			if(angle > 90 && angle < 270){
+				scale.y = -1;
+			}else{
+				scale.y = 1;
+			}
+			transform.localScale = scale;
+
+		}
 		public void Attack() {
-			if(_timer <= 0) {
+			if(_timer <= 0 && _currentAmmo > 0) {
 
 				for(int i = 0; i < _projectileAmount; i++) {
 					Vector3 euler = transform.rotation.eulerAngles;
@@ -50,9 +69,15 @@ namespace SAE.Assets.Scripts {
 					_timer = _attackCooldown;
 				}
 
+				_currentAmmo--;
+
 				_audioSource.clip = _shootClips[Random.Range(0, _shootClips.Length)];
 				_audioSource.Play();
 			}
+		}
+
+		public void Reload(){
+			_currentAmmo = _maximumAmmo;
 		}
 	}
 }

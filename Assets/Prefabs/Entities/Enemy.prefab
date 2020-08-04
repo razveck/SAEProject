@@ -451,6 +451,8 @@ MonoBehaviour:
   _audioSource: {fileID: -1398353891694438002}
   _damageClip: {fileID: 8300000, guid: f28ad56ace9c9184c9cfe5d6d0c4dfef, type: 3}
   Team: 1
+  _lootPrefab: {fileID: 7972658167686227761, guid: 8ac955aa7d9bf72458afbb87ef6682e8,
+    type: 3}
 --- !u!114 &531888962890992855
 MonoBehaviour:
   m_ObjectHideFlags: 0

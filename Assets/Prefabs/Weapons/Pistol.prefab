@@ -53,6 +53,8 @@ MonoBehaviour:
   _shootPoint: {fileID: 64394588195609995}
   _projectileAmount: 1
   _deviationAngle: 0
+  _maximumAmmo: 15
+  _currentAmmo: 0
   _audioSource: {fileID: 2267666180653933230}
   _shootClips:
   - {fileID: 8300000, guid: 6d15873af7e88dc4988b92299e50681f, type: 3}
