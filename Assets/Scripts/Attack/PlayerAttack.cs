@@ -43,7 +43,7 @@ namespace SAE.Assets.Scripts {
 			}
 		}
 
-		public void ChangeWeapon(WeaponType newWeapon){
+		public override void ChangeWeapon(WeaponType newWeapon){
 			//look through the weaponList
 			for(int i = 0; i < _weaponsList.Count; i++) {
 				if(_weaponsList[i].Type == newWeapon){
@@ -59,6 +59,8 @@ namespace SAE.Assets.Scripts {
 					//play animations/sounds
 				}
 			}
+
+			base.ChangeWeapon(newWeapon);
 		}
 
 		public void Reload(){

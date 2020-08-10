@@ -15,9 +15,19 @@ namespace SAE.Assets.Scripts {
 		[SerializeField]
 		protected Team _team;
 
+		public event Action<Weapon> WeaponChanged;
+
+		private void Start() {
+			WeaponChanged?.Invoke(_weapon);
+		}
+
 		protected virtual void Update() {
 			Aim();
 			Attack();
+		}
+
+		public virtual void ChangeWeapon(WeaponType newWeapon){
+			WeaponChanged?.Invoke(_weapon);
 		}
 
 		protected abstract void Aim();

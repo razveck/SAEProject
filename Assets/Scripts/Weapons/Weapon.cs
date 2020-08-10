@@ -27,8 +27,21 @@ namespace SAE.Assets.Scripts {
 
 		[SerializeField]
 		private int _maximumAmmo;
-		[SerializeField]
-		private int _currentAmmo;
+
+		//backing field ("backend" of the property)
+		private int _currentAmmoBacking;
+		private int _currentAmmo
+		{
+			get {
+				return _currentAmmoBacking;
+			}
+			set
+			{
+				_currentAmmoBacking = value;
+
+				AmmoChanged?.Invoke(value);
+			}
+		}
 
 		[SerializeField]
 		private AudioSource _audioSource;
@@ -37,8 +50,10 @@ namespace SAE.Assets.Scripts {
 
 		public WeaponType Type;
 
+		public event Action<int> AmmoChanged;
+
 		private void Start() {
-			_currentAmmo = _maximumAmmo;
+			Reload();
 		}
 
 		private void Update() {
@@ -48,9 +63,9 @@ namespace SAE.Assets.Scripts {
 			Vector3 scale = transform.localScale;
 			float angle = transform.rotation.eulerAngles.z;
 
-			if(angle > 90 && angle < 270){
+			if(angle > 90 && angle < 270) {
 				scale.y = -1;
-			}else{
+			} else {
 				scale.y = 1;
 			}
 			transform.localScale = scale;
@@ -76,7 +91,7 @@ namespace SAE.Assets.Scripts {
 			}
 		}
 
-		public void Reload(){
+		public void Reload() {
 			_currentAmmo = _maximumAmmo;
 		}
 	}
