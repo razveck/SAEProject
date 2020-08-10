@@ -7,7 +7,8 @@ namespace SAE.Assets.Scripts {
 
 		protected Vector2 _direction;
 
-		
+		[SerializeField]
+		private Rigidbody2D _rigidbody;
 
 		[SerializeField]
 		protected float _speed;
@@ -43,7 +44,12 @@ namespace SAE.Assets.Scripts {
 			//transform.InverseTransformDirection(_direction)
 
 			//solution 2: Translate relative to world space
-			transform.Translate(_direction * _speed * Time.deltaTime, Space.World);
+			//transform.Translate(_direction * _speed * Time.deltaTime, Space.World);
+		}
+
+		private void FixedUpdate() {
+			//MovePosition is basically like Translate, but it checks for collisions
+			_rigidbody.MovePosition(transform.position + (Vector3)_direction * _speed * Time.deltaTime);
 		}
 
 		protected abstract void CalculateDirection();

@@ -10,8 +10,6 @@ namespace SAE.Assets.Scripts {
 		[SerializeField]
 		private float _directionCooldown;
 
-		public Transform player;
-
 		private void Start() {
 			_direction = Vector2.right;
 		}
@@ -20,7 +18,7 @@ namespace SAE.Assets.Scripts {
 			_timer -= Time.deltaTime;
 
 			if(_timer <= 0) {
-				_direction = player.position - transform.position;
+				_direction = Player.Instance.transform.position - transform.position;
 
 				_timer = _directionCooldown;
 			}

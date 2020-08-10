@@ -15,14 +15,15 @@ namespace SAE.Assets.Scripts {
 
 		private void OnTriggerEnter2D(Collider2D collision) {
 
-			if(collision.TryGetComponent(out HealthBase health)){
+			if(collision.TryGetComponent(out HealthBase health)) {
 				if(health.Team == Team)
 					return;
 
 				health.DealDamage(_damage);
 
-				Destroy(gameObject);
 			}
+
+			Destroy(gameObject);
 		}
 
 	}
