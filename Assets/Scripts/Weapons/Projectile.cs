@@ -23,7 +23,8 @@ namespace SAE.Assets.Scripts {
 
 			}
 
-			Destroy(gameObject);
+
+			ObjectPool.Instance.Return(gameObject);
 		}
 
 	}

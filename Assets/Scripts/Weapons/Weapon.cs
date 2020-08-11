@@ -79,7 +79,13 @@ namespace SAE.Assets.Scripts {
 					float angle = _deviationAngle / 2;
 					euler.z += Random.Range(-angle, angle);
 
-					Projectile proj = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.Euler(euler)).GetComponent<Projectile>();
+					//Projectile proj = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.Euler(euler)).GetComponent<Projectile>();
+					GameObject obj = ObjectPool.Instance.Request(_projectilePrefab);
+					obj.transform.position = _shootPoint.position;
+					obj.transform.rotation = Quaternion.Euler(euler);
+
+					Projectile proj = obj.GetComponent<Projectile>();
+
 					proj.Team = _team;
 					_timer = _attackCooldown;
 				}

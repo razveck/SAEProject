@@ -27,7 +27,16 @@ namespace SAE.Assets.Scripts {
 		public float Lifetime => _range / _speed;
 
 		private void OnEnable() {
-			Destroy(gameObject, Lifetime);
+			StartCoroutine(ReturnCoroutine());
+		}
+
+		private IEnumerator ReturnCoroutine(){
+			yield return new WaitForSeconds(Lifetime);
+			ObjectPool.Instance.Return(gameObject);
+		}
+
+		private void OnDisable() {
+			StopAllCoroutines();
 		}
 
 		protected override void CalculateDirection() {

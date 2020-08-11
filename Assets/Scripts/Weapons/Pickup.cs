@@ -16,7 +16,7 @@ namespace SAE.Assets.Scripts {
 				player.Reload();
 
 				AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1);
-				Destroy(gameObject);
+				ObjectPool.Instance.Return(gameObject);
 			}
 		}
 

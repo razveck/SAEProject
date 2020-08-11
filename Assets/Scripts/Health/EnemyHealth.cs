@@ -12,7 +12,9 @@ namespace SAE.Assets.Scripts {
 		private GameObject _lootPrefab;
 
 		protected override void Die() {
-			Instantiate(_lootPrefab, transform.position, Quaternion.identity);
+			//Instantiate(_lootPrefab, transform.position, Quaternion.identity);
+			var loot = ObjectPool.Instance.Request(_lootPrefab);
+			loot.transform.position = transform.position;
 
 			Destroy(gameObject);
 		}
